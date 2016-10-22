@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Άσκηση 14</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form style="width: 400px";>
+      <fieldset>
+        <legend>Personal Data</legend>
+        <table style=text-align="left">
+        <tr>
+          <td>username:</td>
+          <td><input type="text" name="userid" id="userid" required></td>
+        </tr>
+        <tr>
+        <td>password:</td>
+        <td><input type="password" name="psw" id="psw" required></td>
+        </tr>
+        <tr>
+        <td>preferences:</td>
+        <td><select name="preferences">
+          <option value="............">............</option>
+          <option value="JAVA">JAVA</option>
+          <option value="C#">C#</option>
+          <option value="INDIFFERENCE">INDIFFERENCE</option>
+        </select></td>
+        </tr>
+        <tr>
+        <td>gender:</td>
+        <td><input type="radio" name="gender" value="Male" required> Male <input type="radio" name="gender" value="Female" required> Female</td>
+        </tr>
+        <tr>
+        <td rowspan="2" valign="top">age:</td>
+        <td><input type="checkbox" name="age" value="checked" required></td>
+        </tr>
+        <tr>
+        <td><input type="submit" name="mysubmit" value="Register">
+            <input type="reset" name="myreset" value="Clear fields"></td>
+        </tr>
+      </table>
+    </fieldset>
+    </form>
+  </body>
+</html>
