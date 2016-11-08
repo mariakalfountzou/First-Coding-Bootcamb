@@ -1,0 +1,85 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Profile Page</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/StyleSheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <img src="~/Shared/images/logoFreecon1_1.png" alt="logoFreecon" />
+        <form>
+            <a href="~/Home.html" class="button">Αρχική</a>
+            <a href="~/Who We Are.html" class="button">Σχετικά με εμάς</a>
+            <a href="~/Contact Page.html" class="button">Επικοινωνία</a>
+        </form>
+    </header>
+    <main id="personal-profile-page" class="page-content">
+        <form action="" method="post" name="" id="">
+            <table>
+                <tr>
+                    <td colspan="20" style="text-align:center"><h2>Καλώς ήρθες!</h2></td>
+                </tr>
+                <tr>
+                    <td colspan="25" style="text-align:center"><h2>Το προφίλ μου</h2></td>
+                </tr>
+                <tr>
+                    <td rowspan="10"><img src="~/Shared/images/profile-icon.png" alt="profile-icon" /></td>
+                </tr>
+                <tr>
+                    <td><label>Όνομα:</label></td>
+                    <td><input type="text" name="FirstName" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Επώνυμο:</label></td>
+                    <td><input type="text" name="LastName" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Διεύθυνση:</label></td>
+                    <td><input type="text" name="Address" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="email" name="email" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Τηλέφωνο:</label></td>
+                    <td><input type="text" name="phoneNumber" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Υπόλοιπο:</label></td>
+                    <td><input type="int" name="balance" value="1000" readonly="" /></td>
+                </tr>
+                <tr>
+                    <td><label>Κατηγορία υπηρεσίας:</label></td>
+                    <td><input type="text" name="Category" required /></td>
+                </tr>
+                <tr>
+                    <td><label>Υπηρεσία:</label></td>
+                    <td><input type="text" name="Service" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="form-ServiceCostPerHour">Χρέωση ανά ώρα:</label></td>
+                    <td><input type="int" name="ServiceCostPerHour" required /></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td colspan="2"><textarea name="summary" placeholder="Σύντομο βιογραφικό - Περιγραφή προσφερόμενης υπηρεσίας" cols="75" rows="20" required=""></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="20" style="text-align:center"><input id="shiny" type="submit" value="ΚΑΤΑΧΩΡΗΣΗ" /></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <footer class="page-footer">
+        <form>
+            <a href="~/Register Page.html" class="button">Προηγούμενη σελίδα</a>
+            <a href="~/Home.html" class="button">Αρχική</a>
+            <a href="~/Next Page.html" class="button">Επόμενη σελίδα</a>
+        </form>
+    </footer>
+</body>
+</html>

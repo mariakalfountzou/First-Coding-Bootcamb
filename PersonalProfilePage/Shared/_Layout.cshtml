@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@Page.Title - Personal Profile Page</title>
+    <meta name="description" content="Personal website of Maria Kalfountzou" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Shared/css/StyleSheet.css" />
+</head>
+<body>
+    @RenderPage("~/Shared/_Header.cshtml")
+    <main id="@PageData["page-id"]" class="page-content">
+        @RenderBody()
+    </main>
+    @RenderPage("~/Shared/_Footer.cshtml")
+</body>
+</html>

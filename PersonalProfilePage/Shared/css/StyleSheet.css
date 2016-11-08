@@ -1,0 +1,90 @@
+﻿
+/*html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}*/
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image:url(../images/background_image.jpg);
+    /*background-color: #fae0c7;*/
+    font-family: 'Dosis', sans-serif;
+    color: #222222;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /*background-color: #ffdfad;*/
+    height:50px;
+}
+
+.page-header img{
+    align-self:baseline;
+    width:100px;
+}
+
+
+#personal-profile-page {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+
+textarea {
+    resize: none;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    /*background-color: antiquewhite;*/
+}
+
+.button {
+    background-color: #fee0b9; 
+    border-radius: 8px;
+    color: black;
+    padding: 8px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor:pointer;
+    transition-duration: 0.4s;
+}
+
+.button:hover   {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+ input#shiny {
+    padding: 4px 10px;
+    background:#8cc42f;
+    border:2px outset #dad9d8;
+    font-size:1.1em;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:#000;
+    text-shadow: 0px 1px 10px #000;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+}
+
+input#shiny:hover, input#shiny:focus {
+    border:2px solid #dad9d8;
+}
+

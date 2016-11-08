@@ -1,0 +1,142 @@
+﻿@{
+    Layout = "~/Shared/_Layout.cshtml";
+    PageData["page-id"] = "personal-profile-page";
+    Page.Title = "PersonalProfilePage";
+}
+
+@using FreeconDB;
+@{
+    var myUserName = "";
+    var myFirstName = "";
+    var myLastName = "";
+    //var mybalance = "1000"; //handled by administrator
+    var myemail = "";
+    var mypassword = "";
+    var myAddress = "";
+    var mysummary = "";
+
+
+    var db = new FreeconDB();
+
+    if (IsPost)
+    {
+        myUserName = Request.Form["myUserName"];
+        mypassword = Request.Form["mypassword"];
+        myFirstName = Request.Form["myFirstName"];
+        myLastName = Request.Form["myLastName"];
+        myAddress = Request.Form["myAddress"];
+        myemail = Request.Form["myemail"];
+        mysummary = Request.Form["mysummary"];
+
+        var m = new Member()
+        {
+            UserName = myUserName,
+            FirstName = myFirstName,
+            LastName = myLastName,
+            email = myemail,
+            password = mypassword,
+            Address = myAddress,
+            summary = mysummary
+        };
+
+        db.Members.Add(m);
+        db.SaveChanges();
+
+    }
+
+    var db1 = new FreeconDB();
+    var categories = db1.Services.Select(x => x.Category).Distinct();
+    var servicename = db1.Services.Select(x => x.ServiceName).Distinct();
+
+}
+
+
+
+<form action="~/PersonalProfilePage.cshtml" method="post" name="" id="">
+    <table>
+        <tr>
+            <td colspan="20" style="text-align:center"><h2>Καλώς ήρθες!</h2></td>
+        </tr>
+        <tr>
+            <td colspan="25" style="text-align:center"><h2>Το προφίλ μου</h2></td>
+        </tr>
+        <tr>
+            <td rowspan="11"><img src="~/Shared/images/profile-icon.png" alt="profile-icon" /></td>
+        </tr>
+        <tr>
+            <td><label for="myFirstName">Όνομα:</label></td>
+            <td><input type="text" name="myFirstName" required value="@Request.Form["myFirstName"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="myLastName">Επώνυμο:</label></td>
+            <td><input type="text" name="myLastName" required value="@Request.Form["myLastName"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="myUserName">User Name:</label></td>
+            <td><input type="text" name="myUserName" required value="@Request.Form["myUserName"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="mypassword">Password:</label></td>
+            <td><input type="text" name="mypassword" required value="@Request.Form["mypassword"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="myAddress">Διεύθυνση:</label></td>
+            <td><input type="text" name="myAddress" required value="@Request.Form["myAddress"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="myemail">Email:</label></td>
+            <td><input type="email" name="myemail" required value="@Request.Form["myemail"]" /></td>
+        </tr>
+        <tr>
+            <td><label for="myphoneNumber">Τηλέφωνο:</label></td>
+            <td><input type="tel" name="myphoneNumber" /></td>
+        </tr>
+        <tr>
+            <td><label for="balance">Υπόλοιπο:</label></td>
+            <td><input type="int" name="balance" value="1000" readonly="" /></td>
+        </tr>
+        <tr>
+            <td><label for="Category">Κατηγορία υπηρεσίας:</label></td>
+            <td>
+                <select>
+                    @{
+                        foreach (var cat in categories)
+                        {
+                            <option value="@cat">@cat</option>
+                        }
+                    }
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Service">Υπηρεσία:</label></td>
+            <td>
+                <select>
+                    @{
+                        foreach (var ser in servicename)
+                        {
+                            <option value="@ser">@ser</option>
+                        }
+                    }
+                </select>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td colspan="2"><textarea name="mysummary" required value="@Request.Form["mysummary"]" placeholder="Σύντομο βιογραφικό - Περιγραφή προσφερόμενης υπηρεσίας" cols="75" rows="20"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="20" style="text-align:center"><input id="shiny" type="submit" value="ΚΑΤΑΧΩΡΗΣΗ" /></td>
+        </tr>
+        <tr>
+            <td colspan="20" style="text-align:center"><button type="reset" value="Reset">Reset</button></td>
+        </tr>
+</table>
+</form>
+
+
+
+    
+
